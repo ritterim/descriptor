@@ -45,6 +45,7 @@
     <Compile Include="Generic\IDescriptor`1.cs" />
     <Compile Include="Generic\IMethodDescriptor`1.cs" />
     <Compile Include="Generic\MethodDescriptorContainer`1.cs" />
+    <Compile Include="Helpers\EnvironmentHelper.cs" />
     <Compile Include="IDescriptor.cs" />
     <Compile Include="IMethodDescriptor.cs" />
     <Compile Include="MethodDescriptorContainer.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 using Ritter.Descriptor.Generic;
+using Ritter.Descriptor.Helpers;
 
 namespace Ritter.Descriptor
 {
@@ -30,7 +31,16 @@ namespace Ritter.Descriptor
         {
             UnaryExpression unaryExpr = (UnaryExpression)method.Body;
             MethodCallExpression methodCallExpr = (MethodCallExpression)unaryExpr.Operand;
-            ConstantExpression constantExpr = (ConstantExpression)methodCallExpr.Object;
+
+            /**
+             * Not entirely sure what causes issues between the MS and Mono implementations,
+             * but the former throws a NRE when extracting the second-index from the `Arguments` property,
+             * while the latter throws a similar NRE when using the `Object` property.
+             */
+            ConstantExpression constantExpr = EnvironmentHelper.IsRunningOnMono.Value
+                ? (ConstantExpression)methodCallExpr.Arguments[2]
+                : (ConstantExpression)methodCallExpr.Object;
+
             MethodInfo methodInfo = (MethodInfo)constantExpr.Value;
 
             var methodName = methodInfo.Name;
