@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ritter.Descriptor.Helpers
+namespace RimDev.Descriptor.Helpers
 {
     public static class EnvironmentHelper
     {

@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Ritter.Descriptor.Tests
+namespace RimDev.Descriptor.Tests
 {
     public class MethodDescriptorContainerTests
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{9D47D8AA-4201-4ECB-8325-123A5D720DF1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ritter.Descriptor.Tests</RootNamespace>
-    <AssemblyName>Ritter.Descriptor.Tests</AssemblyName>
+    <RootNamespace>RimDev.Descriptor.Tests</RootNamespace>
+    <AssemblyName>RimDev.Descriptor.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>9a032c1e</NuGetPackageImportStamp>

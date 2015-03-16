@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Ritter.Descriptor
+namespace RimDev.Descriptor
 {
     public interface IMethodDescriptor : IDescriptor
     {

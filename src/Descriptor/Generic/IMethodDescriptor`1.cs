@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace Ritter.Descriptor.Generic
+namespace RimDev.Descriptor.Generic
 {
     public interface IMethodDescriptor<T> : IMethodDescriptor
     {

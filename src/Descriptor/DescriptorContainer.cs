@@ -1,4 +1,4 @@
-﻿namespace Ritter.Descriptor
+﻿namespace RimDev.Descriptor
 {
     public class DescriptorContainer : IDescriptor
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{09569C4C-7757-4B8E-B286-42E4571EE60B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ritter.Descriptor</RootNamespace>
-    <AssemblyName>Ritter.Descriptor</AssemblyName>
+    <RootNamespace>RimDev.Descriptor</RootNamespace>
+    <AssemblyName>RimDev.Descriptor</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-﻿namespace Ritter.Descriptor.Generic
+﻿namespace RimDev.Descriptor.Generic
 {
     public interface IDescriptor<T> : IDescriptor
     {

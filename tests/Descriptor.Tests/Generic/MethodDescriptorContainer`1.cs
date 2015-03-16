@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Moq;
-using Ritter.Descriptor.Generic;
+using RimDev.Descriptor.Generic;
 using Xunit;
 using Xunit.Extensions;
 
-namespace Ritter.Descriptor.Tests
+namespace RimDev.Descriptor.Tests
 {
     public class MethodDescriptorContainer_1Tests
     {

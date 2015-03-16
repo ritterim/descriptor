@@ -3,7 +3,7 @@ using System.Linq;
 using Xunit;
 using Xunit.Extensions;
 
-namespace Ritter.Descriptor.Tests
+namespace RimDev.Descriptor.Tests
 {
     public class AbstractDescriptor_1Tests
     {

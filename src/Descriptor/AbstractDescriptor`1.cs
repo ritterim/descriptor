@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
-using Ritter.Descriptor.Generic;
-using Ritter.Descriptor.Helpers;
+using RimDev.Descriptor.Generic;
+using RimDev.Descriptor.Helpers;
 
-namespace Ritter.Descriptor
+namespace RimDev.Descriptor
 {
     public abstract class AbstractDescriptor<T> : DescriptorContainer<T>
         where T : class, new()

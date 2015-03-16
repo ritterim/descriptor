@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Ritter.Descriptor.Generic
+namespace RimDev.Descriptor.Generic
 {
     public class MethodDescriptorContainer<T> : DescriptorContainer<T>, IMethodDescriptor<T>
     {
