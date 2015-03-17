@@ -29,20 +29,7 @@ namespace RimDev.Descriptor
             string description = null,
             Action<IMethodDescriptor<TModel>> model = null)
         {
-            UnaryExpression unaryExpr = (UnaryExpression)method.Body;
-            MethodCallExpression methodCallExpr = (MethodCallExpression)unaryExpr.Operand;
-
-            /**
-             * Not entirely sure what causes issues between the MS and Mono implementations,
-             * but the former throws a NRE when extracting the second-index from the `Arguments` property,
-             * while the latter throws a similar NRE when using the `Object` property.
-             */
-            ConstantExpression constantExpr = EnvironmentHelper.IsRunningOnMono.Value
-                ? (ConstantExpression)methodCallExpr.Arguments[2]
-                : (ConstantExpression)methodCallExpr.Object;
-
-            MethodInfo methodInfo = (MethodInfo)constantExpr.Value;
-
+            var methodInfo = ExtractMemberInfoFromExpression<TModel>(method);
             var methodName = methodInfo.Name;
             var methodContainer = new MethodDescriptorContainer<TModel>();
 
@@ -51,17 +38,63 @@ namespace RimDev.Descriptor
                 model(methodContainer);
             }
 
-            Methods.Add(new MethodDescriptorContainer()
-            {
-                Description = description
-                    ?? methodContainer.Description
-                    ?? string.Format("This is {0}.", methodName),
-                Name = methodContainer.Name ?? methodName,
-                Type = methodContainer.Type,
-                Parameters = methodContainer.Parameters
-            });
+            var methodDescriptorContainer = GenerateMethodDescriptorContainer<TModel>(methodContainer);
+
+            methodDescriptorContainer.Description =
+                methodDescriptorContainer.Description
+                    ?? description
+                    ?? string.Format("This is {0}.", methodName);
+
+            methodDescriptorContainer.Name =
+                methodDescriptorContainer.Name
+                    ?? methodName;
+
+            Methods.Add(methodDescriptorContainer);
 
             return this;
+        }
+
+        protected IMethodDescriptor GenerateMethodDescriptorContainer<TModel>(
+            IMethodDescriptor<TModel> methodContainer)
+        {
+            var methodDescriptorContainer = new MethodDescriptorContainer()
+            {
+                Description = methodContainer.Description,
+                Name = methodContainer.Name,
+                Type = methodContainer.Type,
+                Parameters = methodContainer.Parameters
+            };
+
+            return methodDescriptorContainer;
+        }
+
+        protected MemberInfo ExtractMemberInfoFromExpression<TModel>(
+            Expression<Func<T, Func<TModel, object>>> method)
+        {
+            var unaryExpression = (UnaryExpression)method.Body;
+
+            var methodInfo = ExtractMethodInfoFromUnaryExpression(unaryExpression);
+
+            return methodInfo;
+        }
+
+        protected MemberInfo ExtractMethodInfoFromUnaryExpression(
+            UnaryExpression expression)
+        {
+            var methodCallExpression = (MethodCallExpression)expression.Operand;
+
+            /**
+             * Not entirely sure what causes issues between the MS and Mono implementations,
+             * but the former throws a NRE when extracting the second-index from the `Arguments` property,
+             * while the latter throws a similar NRE when using the `Object` property.
+             */
+            var constantExpression = EnvironmentHelper.IsRunningOnMono.Value
+                ? (ConstantExpression)methodCallExpression.Arguments[2]
+                : (ConstantExpression)methodCallExpression.Object;
+
+            var methodInfo = (MethodInfo)constantExpression.Value;
+
+            return methodInfo;
         }
     }
 }
