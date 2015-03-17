@@ -2,8 +2,8 @@
 {
     public interface IDescriptor
     {
-        string Description { get; }
-        string Name { get; }
-        string Type { get; }
+        string Description { get; set; }
+        string Name { get; set; }
+        string Type { get; set; }
     }
 }
