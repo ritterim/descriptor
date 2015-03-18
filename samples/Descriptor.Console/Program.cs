@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             var mathDescriptor = new MathLibraryDescriptor();
+            var httpMathDescriptor = new HttpMathLibraryDescriptor();
         }
     }
 }
