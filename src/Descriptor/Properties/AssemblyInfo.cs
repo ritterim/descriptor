@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Descriptor")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("RimDev Insurance Marketing, Inc.")]
+[assembly: AssemblyCompany("Ritter Insurance Marketing, Inc.")]
 [assembly: AssemblyProduct("Descriptor")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
