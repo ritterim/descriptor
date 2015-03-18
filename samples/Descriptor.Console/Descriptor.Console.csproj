@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{09569C4C-7757-4B8E-B286-42E4571EE60B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{931322DF-E998-4A14-8523-93B51857538E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RimDev.Descriptor</RootNamespace>
-    <AssemblyName>RimDev.Descriptor</AssemblyName>
+    <RootNamespace>RimDev.Descriptor.Console</RootNamespace>
+    <AssemblyName>RimDev.Descriptor.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,15 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generic\AbstractDescriptor`1.cs" />
-    <Compile Include="Descriptor.cs" />
-    <Compile Include="Generic\HttpDescriptorContainer`1.cs" />
-    <Compile Include="Generic\DescriptorContainer`1.cs" />
-    <Compile Include="Generic\HttpMethodDescriptorContainer`1.cs" />
-    <Compile Include="Generic\MethodDescriptorContainer`1.cs" />
-    <Compile Include="Helpers\EnvironmentHelper.cs" />
-    <Compile Include="HttpDescriptor.cs" />
+    <Compile Include="MathLibrary.cs" />
+    <Compile Include="MathLibraryDescriptor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Descriptor\Descriptor.csproj">
+      <Project>{09569c4c-7757-4b8e-b286-42e4571ee60b}</Project>
+      <Name>Descriptor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

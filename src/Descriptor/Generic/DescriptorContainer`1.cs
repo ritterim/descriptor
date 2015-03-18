@@ -1,22 +1,26 @@
 ﻿namespace RimDev.Descriptor.Generic
 {
-    public class DescriptorContainer<T> : DescriptorContainer, IDescriptor<T>
+    public class DescriptorContainer<T>
     {
-        public IDescriptor<T> SetDescription(string description)
+        public virtual string Description { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Type { get; set; }
+
+        public DescriptorContainer<T> SetDescription(string description)
         {
             Description = description;
 
             return this;
         }
 
-        public IDescriptor<T> SetName(string name)
+        public DescriptorContainer<T> SetName(string name)
         {
             Name = name;
 
             return this;
         }
 
-        public IDescriptor<T> SetType(string type)
+        public DescriptorContainer<T> SetType(string type)
         {
             Type = type;
 

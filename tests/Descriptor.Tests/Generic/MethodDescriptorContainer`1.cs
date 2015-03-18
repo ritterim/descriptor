@@ -4,7 +4,7 @@ using RimDev.Descriptor.Generic;
 using Xunit;
 using Xunit.Extensions;
 
-namespace RimDev.Descriptor.Tests
+namespace RimDev.Descriptor.Tests.Generic
 {
     public class MethodDescriptorContainer_1Tests
     {
