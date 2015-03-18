@@ -4,21 +4,21 @@ using System.Linq.Expressions;
 
 namespace RimDev.Descriptor.Generic
 {
-    public class MethodDescriptorContainer<T> : DescriptorContainer<T>, IMethodDescriptor<T>
+    public class MethodDescriptorContainer<T> : DescriptorContainer<T>
     {
         public MethodDescriptorContainer()
         {
-            Parameters = new List<IDescriptor>();
+            Parameters = new List<DescriptorContainer<T>>();
         }
 
-        public ICollection<IDescriptor> Parameters { get; set; }
+        public ICollection<DescriptorContainer<T>> Parameters { get; set; }
 
-        public IMethodDescriptor<T> Parameter<TProperty>(
+        public MethodDescriptorContainer<T> Parameter<TProperty>(
             Expression<Func<T, TProperty>> parameter,
             string description = null,
             string type = null)
         {
-            Parameters.Add(new DescriptorContainer()
+            Parameters.Add(new DescriptorContainer<T>()
             {
                 Description = description,
                 Name = ((MemberExpression)parameter.Body).Member.Name,
@@ -28,21 +28,21 @@ namespace RimDev.Descriptor.Generic
             return this;
         }
 
-        public new IMethodDescriptor<T> SetDescription(string description)
+        public new MethodDescriptorContainer<T> SetDescription(string description)
         {
             Description = description;
 
             return this;
         }
 
-        public new IMethodDescriptor<T> SetName(string name)
+        public new MethodDescriptorContainer<T> SetName(string name)
         {
             Name = name;
 
             return this;
         }
 
-        public new IMethodDescriptor<T> SetType(string type)
+        public new MethodDescriptorContainer<T> SetType(string type)
         {
             Type = type;
 

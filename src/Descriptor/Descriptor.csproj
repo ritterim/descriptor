@@ -39,16 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractDescriptor`1.cs" />
-    <Compile Include="DescriptorContainer.cs" />
+    <Compile Include="Generic\AbstractDescriptor`1.cs" />
+    <Compile Include="Descriptor.cs" />
     <Compile Include="Generic\DescriptorContainer`1.cs" />
-    <Compile Include="Generic\IDescriptor`1.cs" />
-    <Compile Include="Generic\IMethodDescriptor`1.cs" />
     <Compile Include="Generic\MethodDescriptorContainer`1.cs" />
     <Compile Include="Helpers\EnvironmentHelper.cs" />
-    <Compile Include="IDescriptor.cs" />
-    <Compile Include="IMethodDescriptor.cs" />
-    <Compile Include="MethodDescriptorContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
