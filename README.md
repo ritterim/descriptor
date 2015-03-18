@@ -1,4 +1,4 @@
-# Descriptor
+# Descriptor [![Build Status](https://travis-ci.org/ritterim/descriptor.svg?branch=master)](https://travis-ci.org/ritterim/descriptor)
 
 Provides a fluent interface for documenting code and formatting output.
 
