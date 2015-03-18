@@ -2,6 +2,8 @@
 
 Provides a fluent interface for documenting code and formatting output.
 
+**Please be aware this is pre-alpha and going through LOTS of breaking changes.**
+
 ## Usage
 
 Given a class:
