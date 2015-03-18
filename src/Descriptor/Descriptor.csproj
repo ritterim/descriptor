@@ -41,9 +41,12 @@
   <ItemGroup>
     <Compile Include="Generic\AbstractDescriptor`1.cs" />
     <Compile Include="Descriptor.cs" />
+    <Compile Include="Generic\HttpDescriptorContainer`1.cs" />
     <Compile Include="Generic\DescriptorContainer`1.cs" />
+    <Compile Include="Generic\HttpMethodDescriptorContainer`1.cs" />
     <Compile Include="Generic\MethodDescriptorContainer`1.cs" />
     <Compile Include="Helpers\EnvironmentHelper.cs" />
+    <Compile Include="HttpDescriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
