@@ -25,21 +25,11 @@ namespace RimDev.Descriptor
         {
             var methodInfo = ExtractMemberInfoFromExpression<TModel>(method);
             var methodName = methodInfo.Name;
-            var methodContainer = new MethodDescriptorContainer<TModel>();
 
-            if (model != null)
-            {
-                model(methodContainer);
-            }
-
-            methodContainer.Description =
-                methodContainer.Description
-                    ?? description
-                    ?? string.Format("This is {0}.", methodName);
-
-            methodContainer.Name =
-                methodContainer.Name
-                    ?? methodName;
+            var methodContainer = HydrateMethodDescriptionContainer<MethodDescriptorContainer<TModel>, TModel>(
+                methodName,
+                description,
+                Convert<MethodDescriptorContainer<TModel>>(model));
 
             Methods.Add(methodContainer);
 
@@ -54,6 +44,46 @@ namespace RimDev.Descriptor
             var methodInfo = ExtractMethodInfoFromUnaryExpression(unaryExpression);
 
             return methodInfo;
+        }
+
+        protected TContainer HydrateMethodDescriptionContainer<TContainer, TModel>(
+            string methodName,
+            string description = null,
+            Action<object> model = null)
+            where TContainer : class, new()
+        {
+            var methodContainer = new TContainer();
+
+            if (methodContainer as DescriptorContainer<TModel> != null)
+            {
+                if (model != null)
+                {
+                    model(methodContainer);
+                }
+
+                (methodContainer as DescriptorContainer<TModel>).Description =
+                    (methodContainer as DescriptorContainer<TModel>).Description
+                        ?? description
+                        ?? string.Format("This is {0}.", methodName);
+
+                (methodContainer as DescriptorContainer<TModel>).Name =
+                    (methodContainer as DescriptorContainer<TModel>).Name
+                        ?? methodName;
+            }
+
+            return methodContainer;
+        }
+
+        public Action<object> Convert<T>(Action<T> action)
+        {
+            if (action == null)
+            {
+                return null;
+            }
+            else
+            {
+                return new Action<object>(x => action((T)x));
+            }
         }
     }
 }
