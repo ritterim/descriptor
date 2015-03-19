@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyScanner.cs" />
     <Compile Include="Generic\AbstractDescriptor`1.cs" />
     <Compile Include="Descriptor.cs" />
     <Compile Include="Generic\HttpDescriptorContainer`1.cs" />
