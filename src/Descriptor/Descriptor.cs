@@ -85,5 +85,26 @@ namespace RimDev.Descriptor
                 return new Action<object>(x => action((T)x));
             }
         }
+
+        public Descriptor<TClass> SetDescription(string description)
+        {
+            Instance.Description = description;
+
+            return this;
+        }
+
+        public Descriptor<TClass> SetName(string name)
+        {
+            Instance.Name = name;
+
+            return this;
+        }
+
+        public Descriptor<TClass> SetType(string type)
+        {
+            Instance.Type = type;
+
+            return this;
+        }
     }
 }

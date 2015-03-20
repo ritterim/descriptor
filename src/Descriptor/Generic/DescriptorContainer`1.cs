@@ -1,6 +1,6 @@
 ﻿namespace RimDev.Descriptor.Generic
 {
-    public class DescriptorContainer<T>
+    public class DescriptorContainer<T> : IDescriptorContainer
     {
         public virtual string Description { get; set; }
         public virtual string Name { get; set; }
