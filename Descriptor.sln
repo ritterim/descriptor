@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{B344
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descriptor.Console", "samples\Descriptor.Console\Descriptor.Console.csproj", "{931322DF-E998-4A14-8523-93B51857538E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Descriptor.Http", "src\Descriptor.Http\Descriptor.Http.csproj", "{6374A091-F20C-4BCB-BAE0-C2F55002A423}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{931322DF-E998-4A14-8523-93B51857538E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{931322DF-E998-4A14-8523-93B51857538E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{931322DF-E998-4A14-8523-93B51857538E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6374A091-F20C-4BCB-BAE0-C2F55002A423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6374A091-F20C-4BCB-BAE0-C2F55002A423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6374A091-F20C-4BCB-BAE0-C2F55002A423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6374A091-F20C-4BCB-BAE0-C2F55002A423}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
