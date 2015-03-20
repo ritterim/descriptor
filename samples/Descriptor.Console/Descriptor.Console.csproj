@@ -51,6 +51,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Descriptor.Formatters.Json\Descriptor.Formatters.Json.csproj">
+      <Project>{33165e14-218b-46c7-add6-4f91bf36d23d}</Project>
+      <Name>Descriptor.Formatters.Json</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Descriptor.Formatters\Descriptor.Formatters.csproj">
+      <Project>{f46349b3-dd54-4504-976e-354d0799448a}</Project>
+      <Name>Descriptor.Formatters</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Descriptor.Http\Descriptor.Http.csproj">
       <Project>{6374a091-f20c-4bcb-bae0-c2f55002a423}</Project>
       <Name>Descriptor.Http</Name>
