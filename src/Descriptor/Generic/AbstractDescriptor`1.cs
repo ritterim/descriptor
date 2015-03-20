@@ -5,9 +5,9 @@ using RimDev.Descriptor.Helpers;
 
 namespace RimDev.Descriptor.Generic
 {
-    public abstract class AbstractDescriptor<TClass, TInstanceContainer>
+    public abstract class AbstractDescriptor<TClass, TInstanceContainer> : IDescriptor<TInstanceContainer>
         where TClass : class, new()
-        where TInstanceContainer : class, new()
+        where TInstanceContainer : class, IDescriptorContainer, new()
     {
         public AbstractDescriptor()
         {
@@ -15,7 +15,7 @@ namespace RimDev.Descriptor.Generic
             Methods = new List<object>();
         }
 
-        protected TInstanceContainer Instance { get; private set; }
+        public TInstanceContainer Instance { get; private set; }
         protected ICollection<object> Methods { get; private set; }
 
         protected MemberInfo ExtractMethodInfoFromUnaryExpression(
