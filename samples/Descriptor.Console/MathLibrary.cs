@@ -4,13 +4,24 @@
     {
         public object Add(AddModel model)
         {
-            return model.X + model.Y;
+            return model.Addend1 + model.Addend2;
+        }
+
+        public object Substract(SubtractModel model)
+        {
+            return model.Minuend - model.Subtrahend;
         }
     }
 
     public class AddModel
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        public int Addend1 { get; set; }
+        public int Addend2 { get; set; }
+    }
+
+    public class SubtractModel
+    {
+        public int Minuend { get; set; }
+        public int Subtrahend { get; set; }
     }
 }
