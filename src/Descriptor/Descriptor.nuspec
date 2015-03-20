@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>RimDev.Descriptor</id>
+    <version>0.0.0</version>
+    <authors>Ritter Insurance Marketing</authors>
+    <licenseUrl>https://raw.githubusercontent.com/ritterim/descriptor/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ritterim/descriptor</projectUrl>
+    <description>Provides a fluent interface for documenting code.</description>
+    <copyright>Copyright 2015 Ritter Insurance Marketing</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>rimdev descriptor documentation</tags>
+  </metadata>
+  <files>
+    <file src="**\*.cs" target="src" exclude="obj\**\*.cs" />
+    <file src="bin\Release\RimDev.Descriptor.dll" target="lib\net451" />
+    <file src="bin\Release\RimDev.Descriptor.pdb" target="lib\net451" />
+  </files>
+</package>
