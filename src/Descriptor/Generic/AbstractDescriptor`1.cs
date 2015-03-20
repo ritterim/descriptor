@@ -16,7 +16,7 @@ namespace RimDev.Descriptor.Generic
         }
 
         public TInstanceContainer Instance { get; private set; }
-        protected ICollection<object> Methods { get; private set; }
+        public ICollection<object> Methods { get; private set; }
 
         protected MemberInfo ExtractMethodInfoFromUnaryExpression(
             UnaryExpression expression)
