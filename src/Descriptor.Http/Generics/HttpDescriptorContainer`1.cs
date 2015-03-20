@@ -1,4 +1,6 @@
-﻿namespace RimDev.Descriptor.Generic
+﻿using RimDev.Descriptor.Generic;
+
+namespace RimDev.Descriptor.Http.Generic
 {
     public class HttpDescriptorContainer<T> : DescriptorContainer<T>
     {

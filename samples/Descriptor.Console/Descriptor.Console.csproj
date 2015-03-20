@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Descriptor.Http\Descriptor.Http.csproj">
+      <Project>{6374a091-f20c-4bcb-bae0-c2f55002a423}</Project>
+      <Name>Descriptor.Http</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Descriptor\Descriptor.csproj">
       <Project>{09569c4c-7757-4b8e-b286-42e4571ee60b}</Project>
       <Name>Descriptor</Name>

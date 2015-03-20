@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using RimDev.Descriptor.Generic;
+using RimDev.Descriptor.Http.Generic;
 
-namespace RimDev.Descriptor
+namespace RimDev.Descriptor.Http
 {
     public class HttpDescriptor<TClass> : Descriptor<TClass>
         where TClass : class, new()

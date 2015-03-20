@@ -1,4 +1,6 @@
-﻿namespace RimDev.Descriptor.Console
+﻿using RimDev.Descriptor.Http;
+
+namespace RimDev.Descriptor.Console
 {
     public class MathLibraryDescriptor : Descriptor<MathLibrary>
     {

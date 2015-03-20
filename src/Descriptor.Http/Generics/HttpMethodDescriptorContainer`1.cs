@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace RimDev.Descriptor.Generic
+namespace RimDev.Descriptor.Http.Generic
 {
     public class HttpMethodDescriptorContainer<T> : HttpDescriptorContainer<T>
     {
