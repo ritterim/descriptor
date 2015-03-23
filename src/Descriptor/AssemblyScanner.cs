@@ -12,9 +12,12 @@ namespace RimDev.Descriptor
         public AssemblyScanner(IEnumerable<Type> scannerTypes)
         {
             this.scannerTypes = scannerTypes;
+            SetActivator(t => Activator.CreateInstance(t) as IDescriptor<IDescriptorContainer>);
         }
 
         private readonly IEnumerable<Type> scannerTypes;
+
+        public Func<Type, IDescriptor<IDescriptorContainer>> DescriptorActivator { get; set; }
 
         public static AssemblyScanner FindDescriptorsInAssembly(Assembly assembly)
         {
@@ -26,6 +29,12 @@ namespace RimDev.Descriptor
             return FindDescriptorsInAssembly(typeof(T).Assembly);
         }
 
+        public AssemblyScanner SetActivator(Func<Type, IDescriptor<IDescriptorContainer>> activator)
+        {
+            DescriptorActivator = activator;
+            return this;
+        }
+
         private IEnumerable<IDescriptor<IDescriptorContainer>> Execute()
         {
             var scannerInstances = from scannerType in scannerTypes
@@ -35,7 +44,7 @@ namespace RimDev.Descriptor
                                 && i.GetGenericTypeDefinition() == typeof(IDescriptor<>))
                         let matchingScannerInterface = genericScannerInterfaces.FirstOrDefault()
                         where matchingScannerInterface != null
-                        select Activator.CreateInstance(scannerType) as IDescriptor<IDescriptorContainer>;
+                        select DescriptorActivator(scannerType);
 
             return scannerInstances;
         }
