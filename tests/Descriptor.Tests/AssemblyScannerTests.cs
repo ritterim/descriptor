@@ -3,7 +3,7 @@ using System.Linq;
 using RimDev.Descriptor.Generic;
 using Xunit;
 
-namespace RimDev.Descriptor.Tests.Generic
+namespace RimDev.Descriptor.Tests
 {
     public class AssemblyScannerTests
     {

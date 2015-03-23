@@ -49,7 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generic\AssemblyScannerTests.cs" />
+    <Compile Include="AssemblyScannerTests.cs" />
     <Compile Include="Generic\MethodDescriptorContainer`1.cs" />
     <Compile Include="Generic\DescriptorContainer`1Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
