@@ -17,7 +17,7 @@ namespace RimDev.Descriptor
 
         private readonly IEnumerable<Type> scannerTypes;
 
-        public Func<Type, IDescriptor<IDescriptorContainer>> DescriptorActivator { get; set; }
+        private Func<Type, IDescriptor<IDescriptorContainer>> DescriptorActivator { get; set; }
 
         public static AssemblyScanner FindDescriptorsInAssembly(Assembly assembly)
         {
@@ -31,6 +31,7 @@ namespace RimDev.Descriptor
 
         public AssemblyScanner SetActivator(Func<Type, IDescriptor<IDescriptorContainer>> activator)
         {
+            if (activator == null) throw new ArgumentNullException("activator");
             DescriptorActivator = activator;
             return this;
         }
