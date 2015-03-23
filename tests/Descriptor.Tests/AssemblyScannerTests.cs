@@ -54,6 +54,12 @@ namespace RimDev.Descriptor.Tests
             Assert.Equal(1, count);
         }
 
+        [Fact]
+        public void Should_throw_if_activator_is_null()
+        {
+            Assert.Throws<ArgumentNullException>(() => new AssemblyScanner(Enumerable.Empty<Type>()).SetActivator(null));
+        }
+
         public class TestDescriptor : IDescriptor<IDescriptorContainer>
         {
             public IDescriptorContainer Instance
