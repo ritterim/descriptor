@@ -5,7 +5,6 @@ using RimDev.Descriptor.Http.Generic;
 namespace RimDev.Descriptor.Http
 {
     public class HttpDescriptor<TClass> : Descriptor<TClass>
-        where TClass : class, new()
     {
         public HttpDescriptor(
             string name = null,

@@ -6,7 +6,6 @@ using RimDev.Descriptor.Helpers;
 namespace RimDev.Descriptor.Generic
 {
     public abstract class AbstractDescriptor<TClass, TInstanceContainer> : IDescriptor<TInstanceContainer>
-        where TClass : class, new()
         where TInstanceContainer : class, IDescriptorContainer, new()
     {
         public AbstractDescriptor()
