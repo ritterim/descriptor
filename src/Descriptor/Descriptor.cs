@@ -6,7 +6,6 @@ using RimDev.Descriptor.Generic;
 namespace RimDev.Descriptor
 {
     public class Descriptor<TClass> : AbstractDescriptor<TClass, DescriptorContainer<TClass>>
-        where TClass : class, new()
     {
         public Descriptor(
             string name = null,
