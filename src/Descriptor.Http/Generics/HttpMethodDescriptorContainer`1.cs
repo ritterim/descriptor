@@ -58,7 +58,14 @@ namespace RimDev.Descriptor.Http.Generic
 
         public new HttpMethodDescriptorContainer<T> SetUri(string uri)
         {
-            Uri = uri;
+            base.SetUri(uri);
+
+            return this;
+        }
+
+        public new HttpMethodDescriptorContainer<T> SetVerb(string verb)
+        {
+            base.SetVerb(verb);
 
             return this;
         }

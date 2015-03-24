@@ -92,6 +92,7 @@ Or if you are working with Http-related resources (note the use of `rel` and `ur
                     model: x =>
                     {
                         x
+                            .SetVerb("GET")
                             .Parameter(
                                 parameter: p => p.Addend1,
                                 description: "First-addend of operation",
@@ -109,6 +110,7 @@ Or if you are working with Http-related resources (note the use of `rel` and `ur
                     model: x =>
                     {
                         x
+                            .SetVerb("GET")
                             .Parameter(
                                 parameter: p => p.Minuend,
                                 description: "number subtrahend is subtracted from",
