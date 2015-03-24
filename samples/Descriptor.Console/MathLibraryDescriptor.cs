@@ -44,6 +44,7 @@ namespace RimDev.Descriptor.Console
                     model: x =>
                     {
                         x
+                            .SetVerb("GET")
                             .Parameter(
                                 parameter: p => p.Addend1,
                                 description: "First-addend of operation",
@@ -61,6 +62,7 @@ namespace RimDev.Descriptor.Console
                     model: x =>
                     {
                         x
+                            .SetVerb("GET")
                             .Parameter(
                                 parameter: p => p.Minuend,
                                 description: "number subtrahend is subtracted from",

@@ -6,6 +6,7 @@ namespace RimDev.Descriptor.Http.Generic
     {
         public virtual string Rel { get; set; }
         public virtual string Uri { get; set; }
+        public virtual string Verb { get; set; }
 
         public HttpDescriptorContainer<T> SetRel(string rel)
         {
@@ -17,6 +18,13 @@ namespace RimDev.Descriptor.Http.Generic
         public HttpDescriptorContainer<T> SetUri(string uri)
         {
             Uri = uri;
+
+            return this;
+        }
+
+        public HttpDescriptorContainer<T> SetVerb(string verb)
+        {
+            Verb = verb;
 
             return this;
         }

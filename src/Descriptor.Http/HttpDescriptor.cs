@@ -19,7 +19,8 @@ namespace RimDev.Descriptor.Http
             string description = null,
             string rel = null,
             string uri = null,
-            Action<HttpMethodDescriptorContainer<TModel>> model = null)
+            Action<HttpMethodDescriptorContainer<TModel>> model = null,
+            string verb = null)
         {
             var methodInfo = ExtractMemberInfoFromExpression<TModel>(method);
             var methodName = methodInfo.Name;
@@ -36,6 +37,11 @@ namespace RimDev.Descriptor.Http
             methodContainer.Uri =
                 methodContainer.Uri
                     ?? uri
+                    ?? "n/a";
+
+            methodContainer.Verb =
+                methodContainer.Verb
+                    ?? verb
                     ?? "n/a";
 
             Methods.Add(methodContainer);
