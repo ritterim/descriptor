@@ -118,10 +118,34 @@ namespace RimDev.Descriptor.Tests.Generic
                 Assert.Equal("type", parameter.Type);
             }
 
+            [Fact]
+            public void Should_return_nested_instance_with_set_parameter()
+            {
+                var sut = new MethodDescriptorContainer<TestParameter>();
+
+                var @return = sut.Parameter(x => x.Eyes.Color, "description", "type");
+
+                Assert.NotNull(@return);
+
+                var parameter = @return.Parameters.FirstOrDefault();
+
+                Assert.NotNull(parameter);
+                Assert.Equal("Eyes.Color", parameter.Name);
+                Assert.Equal("description", parameter.Description);
+                Assert.Equal("type", parameter.Type);
+            }
+
             private class TestParameter
             {
                 public string FirstName { get; set; }
                 public string LastName { get; set; }
+
+                public Eye Eyes { get; set; }
+
+                public class Eye
+                {
+                    public string Color { get; set; }
+                }
             }
         }
     }
