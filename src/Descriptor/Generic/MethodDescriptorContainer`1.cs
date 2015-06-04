@@ -18,10 +18,13 @@ namespace RimDev.Descriptor.Generic
             string description = null,
             string type = null)
         {
+            // We want to get the full path of the expression.
+            var name = ((MemberExpression)parameter.Body).ToString();
+
             Parameters.Add(new DescriptorContainer<T>()
             {
                 Description = description,
-                Name = ((MemberExpression)parameter.Body).Member.Name,
+                Name = name.Substring(name.IndexOf('.') + 1),
                 Type = type
             });
 
