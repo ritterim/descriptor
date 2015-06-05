@@ -16,7 +16,8 @@ namespace RimDev.Descriptor.Http.Generic
         public HttpMethodDescriptorContainer<T> Parameter<TProperty>(
             Expression<Func<T, TProperty>> parameter,
             string description = null,
-            string type = null)
+            string type = null,
+            bool? required = null)
         {
             // We want to get the full path of the expression.
             var name = ((MemberExpression)parameter.Body).ToString();
@@ -25,7 +26,8 @@ namespace RimDev.Descriptor.Http.Generic
             {
                 Description = description,
                 Name = name.Substring(name.IndexOf('.') + 1),
-                Type = type
+                Type = type,
+                Required = required
             });
 
             return this;

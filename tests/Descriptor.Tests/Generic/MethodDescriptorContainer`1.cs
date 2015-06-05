@@ -135,6 +135,54 @@ namespace RimDev.Descriptor.Tests.Generic
                 Assert.Equal("type", parameter.Type);
             }
 
+            [Fact]
+            public void Should_return_required_as_null_by_default()
+            {
+                var sut = new MethodDescriptorContainer<TestParameter>();
+
+                var @return = sut.Parameter(x => x.Eyes.Color, "description", "type");
+                var parameter = @return.Parameters.FirstOrDefault();
+
+                Assert.Null(parameter.Required);
+            }
+
+            [Fact]
+            public void Should_return_required_as_true_when_set()
+            {
+                var sut = new MethodDescriptorContainer<TestParameter>();
+
+                var @return = sut.Parameter(x => x.Eyes.Color, "description", "type", true);
+                var parameter = @return.Parameters.FirstOrDefault();
+
+                Assert.NotNull(parameter.Required);
+                Assert.True(parameter.Required.Value);
+            }
+
+            [Fact]
+            public void Should_return_required_as_false_when_set()
+            {
+                var sut = new MethodDescriptorContainer<TestParameter>();
+
+                var @return = sut.Parameter(x => x.Eyes.Color, "description", "type", false);
+                var parameter = @return.Parameters.FirstOrDefault();
+
+                Assert.NotNull(parameter.Required);
+                Assert.False(parameter.Required.Value);
+            }
+
+            [Fact]
+            public void Should_be_able_to_set_required_via_method()
+            {
+                var sut = new MethodDescriptorContainer<TestParameter>();
+
+                var parameter = sut
+                    .Parameter(x => x.Eyes.Color, "description", "type")
+                    .SetRequired(true);
+
+                Assert.NotNull(parameter.Required);
+                Assert.True(parameter.Required.Value);
+            }
+
             private class TestParameter
             {
                 public string FirstName { get; set; }
