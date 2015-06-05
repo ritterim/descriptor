@@ -1,6 +1,4 @@
-﻿using System.Security.Policy;
-
-namespace RimDev.Descriptor.Generic
+﻿namespace RimDev.Descriptor.Generic
 {
     public class DescriptorContainer<T> : IDescriptorContainer
     {
