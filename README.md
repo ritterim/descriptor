@@ -1,4 +1,4 @@
-# Descriptor [![Build Status](https://travis-ci.org/ritterim/descriptor.svg?branch=master)](https://travis-ci.org/ritterim/descriptor)
+# Descriptor [![Build Status](https://travis-ci.org/ritterim/descriptor.svg?branch=master)](https://travis-ci.org/ritterim/descriptor) ![NuGet Version](https://img.shields.io/nuget/v/RimDev.Descriptor.svg) ![NuGet Download Count](https://img.shields.io/nuget/dt/RimDev.Descriptor.svg)
 
 Provides a fluent interface for documenting code and formatting output.
 
